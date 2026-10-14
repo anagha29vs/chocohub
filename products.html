@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Products | Choco Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background: #fff8ef;
+            color: #43251b;
+        }
+
+        /* Header */
+        header {
+            background: #351b14;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #ffc875;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffc875;
+        }
+
+        /* Page Banner */
+        .banner {
+            text-align: center;
+            padding: 65px 20px;
+            background: linear-gradient(120deg, #4c261a, #8a4e30);
+            color: white;
+        }
+
+        .banner h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .banner h1 span {
+            color: #ffc875;
+        }
+
+        .banner p {
+            color: #f6dfd0;
+            line-height: 1.8;
+        }
+
+        /* Product Section */
+        .products {
+            padding: 55px 7%;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 34px;
+            margin-bottom: 12px;
+            color: #572c1e;
+        }
+
+        .subtitle {
+            color: #886c58;
+            margin-bottom: 35px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px #46281918;
+            transition: transform 0.3s;
+            text-align: left;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #e6a000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .rating span {
+            color: #806450;
+            font-size: 13px;
+        }
+
+        .description {
+            color: #806450;
+            font-size: 14px;
+            line-height: 1.7;
+            min-height: 48px;
+            margin-bottom: 14px;
+        }
+
+        .price {
+            color: #63331f;
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .price small {
+            font-size: 13px;
+            font-weight: normal;
+            color: #806450;
+        }
+
+        .cart-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background: #603622;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: #ffc875;
+            color: #351b14;
+        }
+
+        .cart-count {
+            display: inline-block;
+            background: #ffc875;
+            color: #351b14;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Back to Home */
+        .back-home {
+            text-align: center;
+            padding: 10px 20px 55px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: #ffc875;
+            color: #351b14;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-btn:hover {
+            background: #f0b24e;
+        }
+
+        /* Footer */
+        footer {
+            background: #29150f;
+            color: #e8d2c1;
+            text-align: center;
+            padding: 22px 10px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .product-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">🍫 Choco Hub</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#story">Our Story</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Our <span>Chocolate Collection</span></h1>
+        <p>
+            Discover your favourite chocolates,
+            made to bring sweetness to every moment!
+        </p>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+
+        <h2 class="section-heading">Explore Our Products</h2>
+
+        <p class="subtitle">
+            Delicious flavours, beautiful treats and perfect gifts.
+        </p>
+
+        <div class="product-container">
+
+            <!-- Product 1 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=700&q=80"
+                    alt="Rich dark chocolate pieces"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Dark Chocolate</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.8 out of 5">
+                        ★★★★★ <span>4.8 (120 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        Rich cocoa flavour with a smooth,
+                        satisfying finish.
+                    </p>
+
+                    <div class="price">₹199 <small>/ pack</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Dark Chocolate', 199)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=700&q=80"
+                    alt="Creamy milk chocolate"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Milk Chocolate</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.7 out of 5">
+                        ★★★★★ <span>4.7 (98 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        Creamy, sweet and delicious chocolate
+                        for every occasion.
+                    </p>
+
+                    <div class="price">₹149 <small>/ pack</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Milk Chocolate', 149)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=700&q=80"
+                    alt="Chocolate truffles"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Chocolate Truffles</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.9 out of 5">
+                        ★★★★★ <span>4.9 (150 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        Soft, indulgent chocolate bites
+                        perfect for gifting.
+                    </p>
+
+                    <div class="price">₹299 <small>/ box</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Chocolate Truffles', 299)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=700&q=80"
+                    alt="Chocolate with nuts"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Nutty Chocolate</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.6 out of 5">
+                        ★★★★★ <span>4.6 (75 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        Crunchy nuts combined with
+                        smooth and creamy chocolate.
+                    </p>
+
+                    <div class="price">₹229 <small>/ pack</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Nutty Chocolate', 229)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1548907040-4d42e3f2e8b0?auto=format&fit=crop&w=700&q=80"
+                    alt="Assorted chocolate gift box"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Chocolate Gift Box</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.9 out of 5">
+                        ★★★★★ <span>4.9 (110 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        A delightful assortment of chocolates
+                        for birthdays and celebrations.
+                    </p>
+
+                    <div class="price">₹499 <small>/ box</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Chocolate Gift Box', 499)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=700&q=80"
+                    alt="Chocolate brownie treats"
+                    loading="lazy">
+
+                <div class="product-info">
+                    <h3>Chocolate Brownies</h3>
+
+                    <div class="rating"
+                         aria-label="Rated 4.8 out of 5">
+                        ★★★★★ <span>4.8 (86 reviews)</span>
+                    </div>
+
+                    <p class="description">
+                        Fudgy, chocolatey treats for
+                        your sweetest cravings.
+                    </p>
+
+                    <div class="price">₹249 <small>/ box</small></div>
+
+                    <button class="cart-btn"
+                            onclick="addToCart('Chocolate Brownies', 249)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cart-count" id="cartCount" aria-live="polite">
+            🛒 Cart: 0 items | Total: ₹0
+        </div>
+
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="home-btn">
+            ← Back to Home
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Choco Hub | Homemade with Love 🍫</p>
+        <p>Sweetness in Every Bite!</p>
+    </footer>
+
+    <!-- Cart Functionality -->
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({ name: name, price: price });
+            total += price;
+
+            document.getElementById("cartCount").textContent =
+                "🛒 Cart: " + cart.length +
+                " items | Total: ₹" + total;
+
+            alert(name + " added to your cart!");
+        }
+    </script>
+
+</body>
+</html>

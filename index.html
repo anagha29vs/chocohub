@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choco Hub | Sweetness in Every Bite</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background: #fff8ef;
+            color: #43251b;
+        }
+
+        /* Navigation */
+        header {
+            background: #351b14;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffc875;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 22px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc875;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 570px;
+            background: linear-gradient(
+                120deg, #4c261a, #8a4e30
+            );
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 65px 8%;
+            gap: 35px;
+        }
+
+        .hero-content {
+            max-width: 540px;
+        }
+
+        .hero-content .small-title {
+            color: #ffc875;
+            letter-spacing: 3px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #ffc875;
+        }
+
+        .hero p {
+            color: #f6dfd0;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .main-btn {
+            display: inline-block;
+            background: #ffc875;
+            color: #351b14;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 43%;
+            max-width: 460px;
+            border-radius: 50% 50% 18px 18px;
+            border: 6px solid #ffc875;
+            object-fit: cover;
+            height: 390px;
+        }
+
+        /* Welcome strip */
+        .welcome {
+            text-align: center;
+            padding: 45px 8%;
+            background: #f5e1c7;
+        }
+
+        .welcome h2 {
+            font-size: 30px;
+            color: #63331f;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #795642;
+        }
+
+        /* Product section */
+        .products {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 36px;
+            color: #572c1e;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #886c58;
+            margin-bottom: 35px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px #46281918;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px #46281925;
+        }
+
+        .product img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 18px 10px 8px;
+            font-size: 22px;
+        }
+
+        .product p {
+            color: #806450;
+            padding: 0 18px 24px;
+            line-height: 1.6;
+        }
+
+        /* Our Story */
+        .story {
+            background: #f5e1c7;
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .story p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #694734;
+        }
+
+        /* Highlights */
+        .highlights {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            padding: 45px 8%;
+            text-align: center;
+        }
+
+        .highlight {
+            min-width: 130px;
+        }
+
+        .highlight .emoji {
+            font-size: 40px;
+        }
+
+        .highlight h3 {
+            margin-top: 10px;
+            color: #63331f;
+        }
+
+        .highlight p {
+            font-size: 14px;
+            color: #806450;
+        }
+
+        /* Contact banner */
+        .contact {
+            text-align: center;
+            background: #603622;
+            color: white;
+            padding: 55px 8%;
+        }
+
+        .contact h2 {
+            font-size: 34px;
+            color: #ffc875;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #29150f;
+            color: #e8d2c1;
+            text-align: center;
+            padding: 22px 10px;
+            font-size: 14px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 6%;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 400px;
+                height: 300px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">🍫 Choco Hub</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#story">Our Story</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <div class="small-title">WELCOME TO OUR CHOCO HUB</div>
+
+            <h1>
+                A Little Bite of
+                <span>Happiness!</span>
+            </h1>
+
+            <p>
+                Experience the delicious world of homemade
+                chocolates. Crafted with love, inspired by
+                sweetness, and made to bring a smile to
+                every chocolate lover.
+            </p>
+
+            <a href="#products" class="main-btn">
+                Discover Our Chocolates →
+            </a>
+        </div>
+
+        <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1548907040-4d42e3f2e8b0?auto=format&fit=crop&w=900&q=80"
+            alt="Assorted chocolate treats">
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h2>Sweetness Made Special ❤️</h2>
+
+        <p>
+            At Choco Hub, every chocolate tells a story.
+            Our homemade treats are created with passion
+            and creativity to make ordinary moments
+            extraordinary.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+
+        <h2 class="section-heading">Our Chocolate Collection</h2>
+
+        <p class="section-subtitle">
+            Find your favourite flavour and make your day sweeter!
+        </p>
+
+        <div class="product-container">
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=700&q=80"
+                    alt="Dark chocolate pieces">
+
+                <h3>Dark Chocolate</h3>
+
+                <p>
+                    Deep cocoa flavour for those who love
+                    rich and intense chocolate.
+                </p>
+            </div>
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=700&q=80"
+                    alt="Milk chocolate treats">
+
+                <h3>Milk Chocolate</h3>
+
+                <p>
+                    Smooth, creamy, and sweet chocolate
+                    for every happy occasion.
+                </p>
+            </div>
+
+            <div class="product">
+                <img
+                    src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=700&q=80"
+                    alt="Chocolate truffles">
+
+                <h3>Chocolate Truffles</h3>
+
+                <p>
+                    Delicious little bites made for
+                    celebrations and thoughtful gifts.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story" id="story">
+
+        <h2 class="section-heading">The Story Behind Choco Hub</h2>
+
+        <p>
+            Choco Hub is a homemade chocolate factory project
+            built around our love for chocolate. Our goal is
+            to create tasty, attractive, and memorable chocolate
+            treats for family, friends, and chocolate lovers.
+            We believe that a little sweetness can brighten
+            anyone's day. From choosing flavours to presenting
+            each treat, we put creativity and care into every
+            chocolate we make.
+        </p>
+
+        <a href="#contact" class="main-btn">
+            Know More About Us
+        </a>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="highlights">
+
+        <div class="highlight">
+            <div class="emoji">❤️</div>
+            <h3>Made with Love</h3>
+            <p>Care in every creation</p>
+        </div>
+
+        <div class="highlight">
+            <div class="emoji">🍫</div>
+            <h3>Delicious Taste</h3>
+            <p>Chocolate for every mood</p>
+        </div>
+
+        <div class="highlight">
+            <div class="emoji">🎁</div>
+            <h3>Sweet Gifting</h3>
+            <p>Perfect for special moments</p>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+
+        <h2>Let's Make Life Sweeter!</h2>
+
+        <p>
+            Want to learn more about Choco Hub and our
+            homemade chocolate collection?<br>
+            Get in touch with us!
+        </p>
+
+        <a
+            href="mailto:yourmail@example.com"
+            class="main-btn">
+            Contact Choco Hub
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Choco Hub | Homemade with Love 🍫</p>
+        <p>Sweetness in Every Bite!</p>
+    </footer>
+
+</body>
+</html>
